@@ -10,6 +10,7 @@ import contactLinks from "./data/contact";
 import skills from "./data/skills";
 
 const profilePhoto = `${import.meta.env.BASE_URL}img/otherImages/${encodeURIComponent("Gemini_Generated_Image_kj8pvekj8pvekj8p.jpg")}`;
+const certificateImage = `${import.meta.env.BASE_URL}Certificates/${encodeURIComponent("Ahmed Mohamed Ebrahem Hosin.jpg")}`;
 
 const skillBadges = {
   react: "⚛",
@@ -203,31 +204,23 @@ function App() {
               title={t("certificates.title")}
               description={t("certificates.description")}
             />
-            <div className="flex flex-col items-center rounded-2xl border border-dashed border-primary/30 bg-slate-800/30 px-6 py-10 text-center">
-              <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="h-8 w-8"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 15.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m8.5 14.5-1 7 4.5-2.5 4.5 2.5-1-7M19 4.5l.8 1.6 1.7.3-1.2 1.3.2 1.8L19 8.7l-1.5.8.2-1.8-1.2-1.3 1.7-.3L19 4.5Z"
-                  />
-                </svg>
-              </span>
-              <p className="text-lg font-semibold text-white">
-                {t("certificates.emptyState")}
-              </p>
+            <div className="rounded-2xl border border-primary/20 bg-slate-800/30 p-3 shadow-xl md:p-5">
+              <a
+                href={certificateImage}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={t("certificates.viewFullSize")}
+                className="block rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                <img
+                  src={certificateImage}
+                  alt={t("certificates.imageAlt")}
+                  className="block max-h-[70vh] w-full rounded-xl object-contain"
+                />
+              </a>
+              <h3 className="mt-4 text-center text-lg font-semibold text-white">
+                {t("certificates.name")}
+              </h3>
             </div>
           </div>
         </SectionWrapper>

@@ -38,7 +38,9 @@
   "certificates": {
     "title": "Certificates",
     "description": "Certificates and courses I have completed.",
-    "emptyState": "Certificates will be added soon."
+    "name": "Web Design Certificate - NTI",
+    "imageAlt": "Web design certificate awarded to Ahmed Mohamed Ebrahem Hosin by NTI",
+    "viewFullSize": "View the full-size certificate image"
   },
   "projects": {
     "title": "Projects",
