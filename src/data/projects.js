@@ -37,6 +37,46 @@ export const projects = [
     video: publicAsset("img/yammy/videos/yammyVidieo.mp4"),
     link: "https://ahmed-elbehy.github.io/yammy/",
   },
+  {
+    id: "bakery",
+    nameKey: "projects.bakery.name",
+    descriptionKey: "projects.bakery.description",
+    image: publicAsset("img/Bekary/images/Screenshot 2026-02-28 032308.png"),
+    video: publicAsset("img/Bekary/video/Screen Recording 2026-02-28 032632.mp4"),
+    link: "https://ahmed-elbehy.github.io/Bakery/",
+  },
+  {
+    id: "creative-portfolio",
+    nameKey: "projects.creative.name",
+    descriptionKey: "projects.creative.description",
+    image: publicAsset("img/Creative/images/Galaxy-Tab-S7-127.0.0.1.png"),
+    video: publicAsset("img/Creative/videos/Recording 2026-03-04 055702.mp4"),
+    link: "https://ahmed-elbehy.github.io/creative-portfolio/",
+  },
+  {
+    id: "foker",
+    nameKey: "projects.foker.name",
+    descriptionKey: "projects.foker.description",
+    image: publicAsset("img/Foker/images/iPad-PRO-11-127.0.0.1.png"),
+    video: publicAsset("img/Foker/videos/Recording 2026-03-02 034817.mp4"),
+    link: "https://ahmed-elbehy.github.io/foker/",
+  },
+  {
+    id: "games",
+    nameKey: "projects.games.name",
+    descriptionKey: "projects.games.description",
+    image: publicAsset("img/Games/images/iPad-Air-4-127.0.0.1.png"),
+    video: publicAsset("img/Games/videos/Recording 2026-03-05 055201.mp4"),
+    link: "https://ahmed-elbehy.github.io/my-Games/",
+  },
+  {
+    id: "previous-portfolio",
+    nameKey: "projects.previousPortfolio.name",
+    descriptionKey: "projects.previousPortfolio.description",
+    image: publicAsset("img/my-portfolio/images/Screenshot 2026-05-09 232020.png"),
+    video: publicAsset("img/my-portfolio/vedios/Recording 2026-05-10 000459.mp4"),
+    link: "https://ahmed-elbehy.github.io/Ahmed-Elbehy-Portfolio/",
+  },
 ];
 
 export default projects;

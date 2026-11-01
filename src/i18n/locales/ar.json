@@ -47,6 +47,13 @@
     "viewProject": "عرض المشروع",
     "videoLabel": "فيديو استعراض مشروع {{name}}",
     "videoUnsupported": "المتصفح لا يدعم تشغيل الفيديو.",
+    "carouselHint": "المشروع {{current}} من {{total}}",
+    "carouselRole": "عارض مشاريع",
+    "slideRole": "شريحة",
+    "slideLabel": "{{current}} من {{total}}",
+    "previousProject": "المشروع السابق",
+    "nextProject": "المشروع التالي",
+    "goToSlide": "انتقل إلى المشروع رقم {{number}}",
     "princess": {
       "name": "Princess Coffee",
       "description": "صفحة كافيه متجاوبة تضم قسم المنيو والصور وبيانات التواصل."
@@ -58,6 +65,26 @@
     "yammy": {
       "name": "Yammy",
       "description": "تطبيق React يعرض بيانات الأطعمة من API."
+    },
+    "bakery": {
+      "name": "Family Bakery",
+      "description": "موقع مخبز متجاوب يعرض المنتجات ومعلومات المخبز وطرق التواصل."
+    },
+    "creative": {
+      "name": "Creative Portfolio",
+      "description": "موقع تعريفي لمطور واجهات أمامية يعرض الخدمات والأعمال بتصميم متجاوب."
+    },
+    "foker": {
+      "name": "Foker",
+      "description": "قالب بورتفوليو عصري يعرض الملف الشخصي والخدمات والأعمال."
+    },
+    "games": {
+      "name": "Game Reviews",
+      "description": "موقع تفاعلي لاستعراض ألعاب الفيديو ومراجعاتها."
+    },
+    "previousPortfolio": {
+      "name": "البورتفوليو السابق",
+      "description": "نسخة سابقة من موقعي الشخصي لعرض الأعمال والخدمات."
     }
   },
   "services": {

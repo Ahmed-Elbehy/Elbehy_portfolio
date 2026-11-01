@@ -47,6 +47,13 @@
     "viewProject": "View Project",
     "videoLabel": "{{name}} project walkthrough video",
     "videoUnsupported": "Your browser does not support video playback.",
+    "carouselHint": "Project {{current}} of {{total}}",
+    "carouselRole": "project carousel",
+    "slideRole": "slide",
+    "slideLabel": "{{current}} of {{total}}",
+    "previousProject": "Previous project",
+    "nextProject": "Next project",
+    "goToSlide": "Go to project {{number}}",
     "princess": {
       "name": "Princess Coffee",
       "description": "Responsive cafe page featuring menu section, images, and contact information."
@@ -58,6 +65,26 @@
     "yammy": {
       "name": "Yammy",
       "description": "React application displaying food data from API."
+    },
+    "bakery": {
+      "name": "Family Bakery",
+      "description": "Responsive bakery website featuring products, bakery details, and contact information."
+    },
+    "creative": {
+      "name": "Creative Portfolio",
+      "description": "Responsive front-end developer portfolio featuring services and selected work."
+    },
+    "foker": {
+      "name": "Foker",
+      "description": "Modern portfolio template showcasing a profile, services, and featured work."
+    },
+    "games": {
+      "name": "Game Reviews",
+      "description": "Interactive website for browsing video games and reviews."
+    },
+    "previousPortfolio": {
+      "name": "Previous Portfolio",
+      "description": "An earlier version of my personal portfolio showcasing work and services."
     }
   },
   "services": {

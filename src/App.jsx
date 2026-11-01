@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import "./App.css";
 import SiteNavbar from "./components/Navbar";
 import SiteFooter from "./components/Footer";
+import ProjectCarousel from "./components/ProjectCarousel";
 import SectionWrapper from "./components/SectionWrapper";
 import { projects } from "./data/projects";
 import contactLinks from "./data/contact";
@@ -228,45 +229,11 @@ function App() {
         <SectionWrapper id="projects" direction="left">
           <div className="mx-auto max-w-6xl">
             <SectionHeading title={t("projects.title")} />
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => (
-                <article
-                  key={project.id}
-                  className="group overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 transition hover:-translate-y-1 hover:border-primary/40"
-                >
-                  <video
-                    poster={project.image}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label={t("projects.videoLabel", {
-                      name: t(project.nameKey),
-                    })}
-                    className="aspect-video w-full bg-slate-950 object-cover"
-                  >
-                    <source src={project.video} />
-                    {t("projects.videoUnsupported")}
-                  </video>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white">
-                      {t(project.nameKey)}
-                    </h3>
-                    <p className="mt-3 min-h-16 leading-7 text-gray-400">
-                      {t(project.descriptionKey)}
-                    </p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 font-semibold text-primary hover:text-sky-300"
-                    >
-                      {t("projects.viewProject")}
-                      <span aria-hidden="true">↗</span>
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <ProjectCarousel
+              projects={projects}
+              t={t}
+              shouldReduceMotion={shouldReduceMotion}
+            />
           </div>
         </SectionWrapper>
 
