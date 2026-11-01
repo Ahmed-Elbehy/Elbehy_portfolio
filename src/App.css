@@ -6,6 +6,7 @@
 /* Vite template styles removed in Phase 3: .hero, #center, #next-steps, #docs, #spacer, .ticks */
 
 .project-carousel-track {
+  overflow-anchor: none;
   scrollbar-width: none;
 }
 
