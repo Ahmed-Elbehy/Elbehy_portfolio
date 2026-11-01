@@ -8,17 +8,20 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
 
   const scrollToSlide = useCallback(
     (index) => {
-      const slides = trackRef.current?.querySelectorAll("[data-project-slide]");
+      const track = trackRef.current;
+      const slides = track?.querySelectorAll("[data-project-slide]");
       const slide = slides?.[index];
 
-      if (!slide) {
+      if (!track || !slide) {
         return;
       }
 
-      slide.scrollIntoView({
+      const trackRect = track.getBoundingClientRect();
+      const slideRect = slide.getBoundingClientRect();
+
+      track.scrollTo({
+        left: track.scrollLeft + slideRect.left - trackRect.left,
         behavior: shouldReduceMotion ? "auto" : "smooth",
-        block: "nearest",
-        inline: "start",
       });
       setActiveIndex(index);
     },
