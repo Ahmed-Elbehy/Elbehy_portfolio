@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, useReducedMotion } from "framer-motion";
 import "./App.css";
@@ -6,6 +6,7 @@ import SiteNavbar from "./components/Navbar";
 import SiteFooter from "./components/Footer";
 import ProjectCarousel from "./components/ProjectCarousel";
 import SectionWrapper from "./components/SectionWrapper";
+import TypewriterText from "./components/TypewriterText";
 import { projects } from "./data/projects";
 import contactLinks from "./data/contact";
 import skills from "./data/skills";
@@ -50,33 +51,14 @@ function App() {
   const shouldReduceMotion = useReducedMotion();
   const isArabic = i18n.language.startsWith("ar");
   const intro = t("hero.intro");
-  const [typedIntro, setTypedIntro] = useState("");
 
   // Keep <html lang> and <html dir> in sync with the current language
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+    document.documentElement.dir = i18n.language.startsWith("ar")
+      ? "rtl"
+      : "ltr";
   }, [i18n.language]);
-
-  useEffect(() => {
-    if (shouldReduceMotion) {
-      setTypedIntro(intro);
-      return undefined;
-    }
-
-    setTypedIntro("");
-    let characterIndex = 0;
-    const typingInterval = window.setInterval(() => {
-      characterIndex += 1;
-      setTypedIntro(intro.slice(0, characterIndex));
-
-      if (characterIndex >= intro.length) {
-        window.clearInterval(typingInterval);
-      }
-    }, 55);
-
-    return () => window.clearInterval(typingInterval);
-  }, [intro, shouldReduceMotion]);
 
   return (
     <div className="flex min-h-screen flex-col bg-dark text-gray-200">
@@ -134,10 +116,10 @@ function App() {
                   aria-label={intro}
                   className="mx-auto mt-6 min-h-16 max-w-xl text-lg leading-8 text-gray-100 drop-shadow-md md:mx-0"
                 >
-                  <span aria-hidden="true">{typedIntro}</span>
-                  <span
-                    aria-hidden="true"
-                    className="ms-1 inline-block h-5 w-0.5 animate-pulse bg-primary align-middle"
+                  <TypewriterText
+                    key={intro}
+                    text={intro}
+                    shouldReduceMotion={shouldReduceMotion}
                   />
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
