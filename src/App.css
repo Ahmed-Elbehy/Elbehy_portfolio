@@ -1,0 +1,6 @@
+/*
+ * Global overrides only. Use Tailwind classes in components first.
+ * Add rules here only when a utility class cannot express them.
+ */
+
+/* Vite template styles removed in Phase 3: .hero, #center, #next-steps, #docs, #spacer, .ticks */

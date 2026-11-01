@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+
+/* Official flowbite-react v4 plugin (uses the package's "style" export condition).
+   Requires @tailwindcss/vite in vite.config.js: Tailwind then processes @plugin
+   itself, bypassing Vite's postcss-import which cannot resolve style exports. */
+
+/* Class list generated automatically by flowbite-react from imported components.
+   Requires the flowbiteReact() plugin in vite.config.js. */
+@source "../.flowbite-react/class-list.json";
+
+/* Also scan components directly as a safety net */
+@source "../node_modules/flowbite-react/dist/components";
+
+@theme {
+  /* Custom colors */
+  --color-dark: #0f172a;
+  --color-primary: #38bdf8;
+
+  /* Custom fonts (produce font-cairo / font-inter utilities) */
+  --font-cairo: Cairo, sans-serif;
+  --font-inter: Inter, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-inter);
+  }
+
+  /* Font for Arabic when html has lang="ar" or dir="rtl" */
+  html[lang="ar"],
+  html[dir="rtl"] {
+    font-family: var(--font-cairo);
+  }
+}
+
+/* Unlayered so it wins over the flowbite-react plugin base styles */
+body {
+  background-color: var(--color-dark) !important;
+  color: var(--color-gray-200) !important;
+}

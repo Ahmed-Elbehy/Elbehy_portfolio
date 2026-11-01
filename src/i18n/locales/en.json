@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu"
+  },
+  "hero": {
+    "name": "Ahmed Elbehy",
+    "title": "Front-End Developer",
+    "intro": "Professional Front-End Developer specializing in building modern, responsive, and high-performance websites and web applications. I have experience working with HTML, CSS, JavaScript, and React, along with modern tools and technologies such as Bootstrap and Tailwind CSS. I focus on writing clean, organized, and maintainable code, transforming ideas and designs into interactive and user-friendly interfaces while ensuring compatibility across different screen sizes and devices. I have experience working with REST APIs and developing dynamic applications. I am also skilled in using AI tools to assist with code generation, code optimization, speeding up development, and solving technical problems. I always strive to deliver professional web solutions that combine high performance, functionality, and modern design.",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact Me",
+    "profileAlt": "Portrait of Ahmed Elbehy"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I have broad experience in web development, using HTML, CSS, JavaScript, and React to build responsive landing pages and websites. I also create and develop websites with WordPress."
+  },
+  "skills": {
+    "title": "Skills",
+    "items": {
+      "react": "React",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "fetchApi": "Fetch APIs",
+      "bootstrap": "Bootstrap",
+      "tailwind": "Tailwind CSS",
+      "wordpress": "WordPress"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "videoLabel": "{{name}} project walkthrough video",
+    "videoUnsupported": "Your browser does not support video playback.",
+    "princess": {
+      "name": "Princess Coffee",
+      "description": "Responsive cafe page featuring menu section, images, and contact information."
+    },
+    "rogina": {
+      "name": "Rogina Cafe",
+      "description": "Cafe page with organized menu, working hours, and photo gallery."
+    },
+    "yammy": {
+      "name": "Yammy",
+      "description": "React application displaying food data from API."
+    }
+  },
+  "services": {
+    "title": "Services & Plans",
+    "landingPage": {
+      "name": "Landing Page with React",
+      "price": "$20"
+    },
+    "fullWebsite": {
+      "name": "Full Website",
+      "description": "Price depends on requirements and number of pages"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind? I would be happy to discuss it.",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with React and Tailwind CSS"
+  }
+}
