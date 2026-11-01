@@ -86,75 +86,99 @@ function App() {
         <SectionWrapper
           id="home"
           animate={false}
-          className="flex items-center py-16 md:min-h-[calc(100vh-5rem)] md:py-24"
+          className="relative isolate flex items-center overflow-hidden py-16 md:min-h-[calc(100vh-5rem)] md:py-24"
         >
-          <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: shouldReduceMotion ? 0 : isArabic ? 72 : -72,
-              }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: shouldReduceMotion ? 0 : 0.8,
-                ease: "easeOut",
-              }}
-              className="text-center md:text-start"
-            >
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                {t("hero.title")}
-              </p>
-              <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
-                {t("hero.name")}
-              </h1>
-              <p
-                aria-label={intro}
-                className="mx-auto mt-6 min-h-16 max-w-xl text-lg leading-8 text-gray-300 md:mx-0"
+          <video
+            aria-hidden="true"
+            autoPlay={!shouldReduceMotion}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+          >
+            <source
+              src={`${import.meta.env.BASE_URL}vidoes/bgHomePage.mp4`}
+              type="video/mp4"
+            />
+          </video>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-slate-950/55"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-dark/35 via-dark/35 to-dark"
+          />
+          <div className="mx-auto grid w-full max-w-6xl items-center gap-12">
+            <div className="grid items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: shouldReduceMotion ? 0 : isArabic ? 72 : -72,
+                }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.8,
+                  ease: "easeOut",
+                }}
+                className="text-center md:text-start"
               >
-                <span aria-hidden="true">{typedIntro}</span>
-                <span
-                  aria-hidden="true"
-                  className="ms-1 inline-block h-5 w-0.5 animate-pulse bg-primary align-middle"
-                />
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-                <a
-                  href={`${import.meta.env.BASE_URL}CV/Ahmed_Hosin_CV_English.pdf`}
-                  download="Ahmed_Hosin_CV_English.pdf"
-                  className="rounded-lg bg-primary px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark"
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                  {t("hero.title")}
+                </p>
+                <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+                  {t("hero.name")}
+                </h1>
+                <p
+                  aria-label={intro}
+                  className="mx-auto mt-6 min-h-16 max-w-xl text-lg leading-8 text-gray-100 drop-shadow-md md:mx-0"
                 >
-                  {t("hero.downloadCV")}
-                </a>
-                <a
-                  href="#contact"
-                  className="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  {t("hero.contactMe")}
-                </a>
-              </div>
-            </motion.div>
+                  <span aria-hidden="true">{typedIntro}</span>
+                  <span
+                    aria-hidden="true"
+                    className="ms-1 inline-block h-5 w-0.5 animate-pulse bg-primary align-middle"
+                  />
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+                  <a
+                    href={`${import.meta.env.BASE_URL}CV/Ahmed_Hosin_CV_English.pdf`}
+                    download="Ahmed_Hosin_CV_English.pdf"
+                    className="rounded-lg bg-primary px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-black/30 transition hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark"
+                  >
+                    {t("hero.downloadCV")}
+                  </a>
+                  <a
+                    href="#contact"
+                    className="rounded-lg border border-white/40 bg-slate-950/30 px-6 py-3 font-semibold text-white shadow-lg shadow-black/30 backdrop-blur-sm transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    {t("hero.contactMe")}
+                  </a>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: shouldReduceMotion ? 0 : isArabic ? -72 : 72,
-              }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: shouldReduceMotion ? 0 : 0.8,
-                ease: "easeOut",
-                delay: shouldReduceMotion ? 0 : 0.12,
-              }}
-              className="mx-auto w-full max-w-sm bg-dark"
-            >
-              <img
-                src={profilePhoto}
-                alt={t("hero.profileAlt")}
-                className="aspect-4/5 w-full object-cover mix-blend-screen"
-                fetchPriority="high"
-                decoding="async"
-              />
-            </motion.div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: shouldReduceMotion ? 0 : isArabic ? -72 : 72,
+                }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.8,
+                  ease: "easeOut",
+                  delay: shouldReduceMotion ? 0 : 0.12,
+                }}
+                className="mx-auto w-full max-w-sm"
+              >
+                <img
+                  src={profilePhoto}
+                  alt={t("hero.profileAlt")}
+                  className="aspect-4/5 w-full object-cover mix-blend-screen"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </motion.div>
+            </div>
           </div>
         </SectionWrapper>
 
