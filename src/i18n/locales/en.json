@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
+    "certificates": "Certificates",
     "projects": "Projects",
     "services": "Services",
     "contact": "Contact",
@@ -13,7 +14,7 @@
   "hero": {
     "name": "Ahmed Elbehy",
     "title": "Front-End Developer",
-    "intro": "Professional Front-End Developer specializing in building modern, responsive, and high-performance websites and web applications. I have experience working with HTML, CSS, JavaScript, and React, along with modern tools and technologies such as Bootstrap and Tailwind CSS. I focus on writing clean, organized, and maintainable code, transforming ideas and designs into interactive and user-friendly interfaces while ensuring compatibility across different screen sizes and devices. I have experience working with REST APIs and developing dynamic applications. I am also skilled in using AI tools to assist with code generation, code optimization, speeding up development, and solving technical problems. I always strive to deliver professional web solutions that combine high performance, functionality, and modern design.",
+    "intro":"Professional Front-End Developer specializing in building modern, responsive, and high-performance websites using HTML, CSS, JavaScript, and React. Skilled in Bootstrap, Tailwind CSS, REST APIs, and writing clean, maintainable code. Experienced in using AI tools to improve code quality, solve technical problems, and enhance development efficiency.",
     "downloadCV": "Download CV",
     "contactMe": "Contact Me",
     "profileAlt": "Portrait of Ahmed Elbehy"
@@ -33,6 +34,11 @@
       "tailwind": "Tailwind CSS",
       "wordpress": "WordPress"
     }
+  },
+  "certificates": {
+    "title": "Certificates",
+    "description": "Certificates and courses I have completed.",
+    "emptyState": "Certificates will be added soon."
   },
   "projects": {
     "title": "Projects",
