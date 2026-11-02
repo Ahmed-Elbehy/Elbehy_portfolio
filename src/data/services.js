@@ -1,18 +1,23 @@
-// Services and plans data from README.md
-
 export const services = [
   {
-    id: "landing-page",
-    nameKey: "services.landingPage.name",
-    // Price is localized via i18n: "$20" in English, "20$" in Arabic
-    priceKey: "services.landingPage.price",
-    featured: true,
+    id: "website-development",
+    nameKey: "services.items.websiteDevelopment",
   },
   {
-    id: "full-website",
-    nameKey: "services.fullWebsite.name",
-    descriptionKey: "services.fullWebsite.description",
-    featured: false,
+    id: "landing-pages",
+    nameKey: "services.items.landingPages",
+  },
+  {
+    id: "design-to-website",
+    nameKey: "services.items.designToWebsite",
+  },
+  {
+    id: "responsive-websites",
+    nameKey: "services.items.responsiveWebsites",
+  },
+  {
+    id: "react-development",
+    nameKey: "services.items.reactDevelopment",
   },
 ];
 

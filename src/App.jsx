@@ -8,6 +8,7 @@ import ProjectCarousel from "./components/ProjectCarousel";
 import SectionWrapper from "./components/SectionWrapper";
 import TypewriterText from "./components/TypewriterText";
 import { projects } from "./data/projects";
+import services from "./data/services";
 import contactLinks from "./data/contact";
 import skills from "./data/skills";
 
@@ -200,6 +201,30 @@ function App() {
                     {t(skill.nameKey)}
                   </span>
                 </div>
+              ))}
+            </div>
+          </div>
+        </SectionWrapper>
+
+        <SectionWrapper id="services" direction="left">
+          <div className="mx-auto max-w-6xl">
+            <SectionHeading title={t("services.title")} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, index) => (
+                <article
+                  key={service.id}
+                  className="rounded-2xl border border-white/10 bg-slate-800/50 p-6 transition hover:-translate-y-1 hover:border-primary/50"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-lg font-semibold leading-8 text-white">
+                    {t(service.nameKey)}
+                  </h3>
+                </article>
               ))}
             </div>
           </div>

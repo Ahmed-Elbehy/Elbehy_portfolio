@@ -88,14 +88,13 @@
     }
   },
   "services": {
-    "title": "Services & Plans",
-    "landingPage": {
-      "name": "Landing Page with React",
-      "price": "$20"
-    },
-    "fullWebsite": {
-      "name": "Full Website",
-      "description": "Price depends on requirements and number of pages"
+    "title": "Services Offered",
+    "items": {
+      "websiteDevelopment": "Website development",
+      "landingPages": "Landing page development",
+      "designToWebsite": "Converting designs into websites",
+      "responsiveWebsites": "Responsive websites for all screen sizes",
+      "reactDevelopment": "Website development with React"
     }
   },
   "contact": {

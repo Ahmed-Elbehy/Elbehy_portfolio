@@ -88,14 +88,13 @@
     }
   },
   "services": {
-    "title": "الخدمات والخطط",
-    "landingPage": {
-      "name": "صفحة هبوط بـ React",
-      "price": "20$"
-    },
-    "fullWebsite": {
-      "name": "موقع كامل",
-      "description": "السعر حسب المتطلبات وعدد الصفحات"
+    "title": "الخدمات المقدمة",
+    "items": {
+      "websiteDevelopment": "تطوير مواقع الويب",
+      "landingPages": "بناء صفحات الهبوط",
+      "designToWebsite": "تحويل التصميم إلى موقع ويب",
+      "responsiveWebsites": "بناء مواقع متجاوبة مع جميع الشاشات",
+      "reactDevelopment": "تطوير مواقع الويب باستخدام React"
     }
   },
   "contact": {
