@@ -21,7 +21,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I have broad experience in web development, using HTML, CSS, JavaScript, and React to build responsive landing pages and websites. I also create and develop websites with WordPress."
+    "description": "Experienced in web development, using HTML, CSS, JavaScript, and React to build responsive landing pages and websites. I also create and develop websites with WordPress."
   },
   "skills": {
     "title": "Skills",
@@ -106,7 +106,6 @@
     "github": "GitHub"
   },
   "footer": {
-    "rights": "All rights reserved.",
-    "builtWith": "Built with React and Tailwind CSS"
+    "rights": "All rights reserved."
   }
 }

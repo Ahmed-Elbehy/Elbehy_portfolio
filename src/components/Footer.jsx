@@ -20,9 +20,7 @@ const SiteFooter = () => {
   return (
     <Footer container className="border-t border-white/10 !bg-transparent">
       <div className="w-full">
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-gray-400">{t("footer.builtWith")}</p>
-
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <FooterLinkGroup>
             {links.map((link) => (
               <FooterLink

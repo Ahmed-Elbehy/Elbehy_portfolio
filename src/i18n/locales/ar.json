@@ -106,7 +106,6 @@
     "github": "جيت هاب"
   },
   "footer": {
-    "rights": "جميع الحقوق محفوظة.",
-    "builtWith": "صُنع بـ React و Tailwind CSS"
+    "rights": "جميع الحقوق محفوظة."
   }
 }
