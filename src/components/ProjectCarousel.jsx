@@ -8,9 +8,35 @@ import {
 
 function ProjectCarousel({ projects, t, shouldReduceMotion }) {
   const trackRef = useRef(null);
+  const playingVideosRef = useRef(new Set());
+  const interactionTimeoutRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const [activeCopyIndex, setActiveCopyIndex] = useState(1);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const [isProjectPlaying, setIsProjectPlaying] = useState(false);
+
+  const pauseForInteraction = () => {
+    window.clearTimeout(interactionTimeoutRef.current);
+    setIsInteracting(true);
+  };
+
+  const resumeAfterInteraction = () => {
+    window.clearTimeout(interactionTimeoutRef.current);
+    interactionTimeoutRef.current = window.setTimeout(
+      () => setIsInteracting(false),
+      2000,
+    );
+  };
+
+  const handleProjectPlay = (event) => {
+    playingVideosRef.current.add(event.currentTarget);
+    setIsProjectPlaying(true);
+  };
+
+  const handleProjectPause = (event) => {
+    playingVideosRef.current.delete(event.currentTarget);
+    setIsProjectPlaying(playingVideosRef.current.size > 0);
+  };
 
   const scrollToSlide = useCallback(
     (index) => {
@@ -49,11 +75,22 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
 
     if (track && slides?.[projects.length]) {
       track.scrollLeft = slides[projects.length].offsetLeft;
+      setActiveCopyIndex(1);
     }
   }, [projects.length]);
 
+  useEffect(
+    () => () => window.clearTimeout(interactionTimeoutRef.current),
+    [],
+  );
+
   useEffect(() => {
-    if (shouldReduceMotion || isHovered || isFocused || projects.length < 2) {
+    if (
+      shouldReduceMotion ||
+      isInteracting ||
+      isProjectPlaying ||
+      projects.length < 2
+    ) {
       return undefined;
     }
 
@@ -94,7 +131,7 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
     frameId = window.requestAnimationFrame(advance);
 
     return () => window.cancelAnimationFrame(frameId);
-  }, [isFocused, isHovered, projects.length, shouldReduceMotion]);
+  }, [isInteracting, isProjectPlaying, projects.length, shouldReduceMotion]);
 
   const updateActiveSlide = () => {
     const track = trackRef.current;
@@ -105,6 +142,13 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
 
     const trackLeft = track.getBoundingClientRect().left;
     const slides = Array.from(track.querySelectorAll("[data-project-slide]"));
+    const loopWidth =
+      slides[projects.length]?.offsetLeft - slides[0]?.offsetLeft;
+
+    if (loopWidth > 0) {
+      setActiveCopyIndex(track.scrollLeft >= loopWidth ? 1 : 0);
+    }
+
     const closestSlide = slides.reduce(
       (closest, slide) => {
         const distance = Math.abs(slide.getBoundingClientRect().left - trackLeft);
@@ -125,14 +169,9 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
 
   return (
     <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocusCapture={() => setIsFocused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          setIsFocused(false);
-        }
-      }}
+      onPointerDown={pauseForInteraction}
+      onPointerUp={resumeAfterInteraction}
+      onPointerCancel={resumeAfterInteraction}
     >
       <div className="mb-5 flex items-center justify-between gap-4">
         <p className="text-sm text-gray-400">
@@ -204,8 +243,8 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
                 key={`${copyIndex}-${project.id}`}
                 data-project-slide
                 data-project-index={index}
-                aria-hidden={copyIndex === 1}
-                inert={copyIndex === 1}
+                aria-hidden={copyIndex !== activeCopyIndex}
+                inert={copyIndex !== activeCopyIndex}
                 role="group"
                 aria-roledescription={t("projects.slideRole")}
                 aria-label={t("projects.slideLabel", {
@@ -219,12 +258,15 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
                   controls
                   playsInline
                   preload="none"
+                  onPlay={handleProjectPlay}
+                  onPause={handleProjectPause}
+                  onEnded={handleProjectPause}
                   aria-label={t("projects.videoLabel", {
                     name: t(project.nameKey),
                   })}
                   className="aspect-video w-full bg-slate-950 object-contain"
                 >
-                  <source src={project.video} />
+                  <source src={project.video} type="video/mp4" />
                   {t("projects.videoUnsupported")}
                 </video>
                 <div dir="auto" className="flex grow flex-col p-5">
@@ -236,8 +278,6 @@ function ProjectCarousel({ projects, t, shouldReduceMotion }) {
                   </p>
                   <a
                     href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
                     className="mt-auto inline-flex items-center gap-2 pt-4 font-semibold text-primary transition hover:text-sky-300"
                   >
                     {t("projects.viewProject")}
