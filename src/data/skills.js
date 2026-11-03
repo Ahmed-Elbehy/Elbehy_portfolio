@@ -1,5 +1,10 @@
 export const skills = [
   {
+    id: "html",
+    nameKey: "skills.items.html",
+    icon: "html",
+  },
+  {
     id: "react",
     nameKey: "skills.items.react",
     icon: "react",

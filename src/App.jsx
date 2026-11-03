@@ -16,6 +16,7 @@ const profilePhoto = `${import.meta.env.BASE_URL}img/otherImages/${encodeURIComp
 const certificateImage = `${import.meta.env.BASE_URL}Certificates/${encodeURIComponent("Ahmed Mohamed Ebrahem Hosin.jpg")}`;
 
 const skillBadges = {
+  html: "HTML",
   react: "⚛",
   css: "CSS",
   javascript: "JS",
@@ -213,17 +214,26 @@ function App() {
               {services.map((service, index) => (
                 <article
                   key={service.id}
-                  className="rounded-2xl border border-white/10 bg-slate-800/50 p-6 transition hover:-translate-y-1 hover:border-primary/50"
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 transition hover:-translate-y-1 hover:border-primary/50"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-lg font-semibold leading-8 text-white">
-                    {t(service.nameKey)}
-                  </h3>
+                  <img
+                    src={`${import.meta.env.BASE_URL}servicesimage/${encodeURIComponent(service.image)}`}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-video w-full object-cover"
+                  />
+                  <div className="p-6">
+                    <span
+                      aria-hidden="true"
+                      className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary"
+                    >
+                      {String(index + 1).padStart(2)}
+                    </span>
+                    <h3 className="text-lg font-semibold leading-8 text-white">
+                      {t(service.nameKey)}
+                    </h3>
+                  </div>
                 </article>
               ))}
             </div>
