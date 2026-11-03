@@ -40,3 +40,4 @@ body {
   background-color: var(--color-dark) !important;
   color: var(--color-gray-200) !important;
 }
+html{scroll-behavior: smooth;}
